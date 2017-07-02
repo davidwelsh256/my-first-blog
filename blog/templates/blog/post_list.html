@@ -6,8 +6,17 @@
 </head>
     <title>The Blog of Jon Athos</title>
 <body>
-    <p>This is a test of the blog to see if it will display on the screen correctly</p>
-    <P>It looks like it works just fine</P>
-
+    <div>
+        <h1><a href="/">Jon Athos</a></h1>
+    </div>
+    <div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+    </div>
 </body>
 </html>
